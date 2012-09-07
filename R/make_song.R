@@ -9,7 +9,7 @@
 #' @examples
 #' song <- c("A5", "B5", "C5", "B5", "A5")
 #' mysong <- make_song(song)
-make_song <- function(song_notes, baseduration){
+make_song <- function(song_notes, baseduration = 1/4){
     # Turn the definition into Wave objects
     waves <- lapply(song_notes, convert_to_wave, duration = baseduration)
     # Smooth out the transitions
