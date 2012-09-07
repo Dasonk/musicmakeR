@@ -16,6 +16,9 @@ convert_to_wave <- function(note, duration = 1/4, wave = sine){
         waves <- lapply(notes, convert_to_wave, duration = duration, wave = wave)
         return(do.call(chord, waves))
     }
+    
+    ## Right now just always use sine wave
+   # wave <- tuneR::sine
     # If just a single note...
     wave(freq[note], bit = 16, xunit = "time", duration = duration)
 }
