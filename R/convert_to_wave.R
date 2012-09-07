@@ -11,8 +11,8 @@ convert_to_wave <- function(note, duration = 1/4, wave = sine){
     }
     
     # Check for chords - These have periods in them
-    if(grepl(".", note, fixed = TRUE)){
-        notes <- strsplit(note, "\\.")[[1]]
+    if(grepl("/", note, fixed = TRUE)){
+        notes <- strsplit(note, "/")[[1]]
         waves <- lapply(notes, convert_to_wave, duration = duration, wave = wave)
         return(do.call(chord, waves))
     }
