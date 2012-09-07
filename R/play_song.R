@@ -13,6 +13,7 @@
 #' }
 play_song <- function(song){
     # Actually play the song
+    # Sys.info()["sysname"]
     if(.Platform['OS.type'] == "windows"){
         play(song)
     }else{
