@@ -24,5 +24,5 @@ m4    <- c("C4/E5", "G4/E5", "E4/E5", "G4/E5", "C4/F5", "G4/F5", "E4/G5", "G4/G5
 
 odetojoy_notes <- c(intro, m1, m2, m3, m4)
 
-song <- make_song(odetojoy_notes)
-play_song(song)
+song <- makesong(odetojoy_notes)
+playsong(song)

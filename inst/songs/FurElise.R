@@ -24,5 +24,5 @@ v2e2    <- c("2_A3/A5")
 fur_elise_notes <- c(intro, v1, v1e1, v1, v1e2, v2, v2e1, v2, v2e2)
 
 
-song <- make_song(fur_elise_notes, base_duration)
-play_song(song)
+song <- makesong(fur_elise_notes, base_duration)
+playsong(song)

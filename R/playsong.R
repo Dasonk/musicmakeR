@@ -9,9 +9,9 @@
 #' @examples
 #' \dontrun{
 #' song <- make_song(c("A5", "B5", "C5"))
-#' play_song(song)
+#' playsong(song)
 #' }
-play_song <- function(song){
+playsong <- function(song){
     # Actually play the song
     # Sys.info()["sysname"]
     if(.Platform['OS.type'] == "windows"){
