@@ -18,8 +18,11 @@ playsong <- function(song){
         play(song)
     }else{
         tmpfile <- if(exists("tmpfile")){tmpfile}else{tempfile(fileext = ".wav")}
+        # Check if it still works with this line
+        on.exit(unlink(tmpfile))
         writeWave(song, file = tmpfile)
-        com <- paste("xdg-open", tmpfile)
-        system(com)
+        play(tmpfile, "xdg-open")
+        #com <- paste("xdg-open", tmpfile)
+        #system(com)
     }
 }

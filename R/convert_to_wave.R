@@ -10,15 +10,13 @@ convert_to_wave <- function(note, duration = 1/4, wave = sine){
         return(silence(duration = duration, bit = 16, xunit = "time"))
     }
     
-    # Check for chords - These have periods in them
+    # Check for chords - These have / in them
     if(grepl("/", note, fixed = TRUE)){
         notes <- strsplit(note, "/")[[1]]
         waves <- lapply(notes, convert_to_wave, duration = duration, wave = wave)
         return(do.call(chord, waves))
     }
     
-    ## Right now just always use sine wave
-   # wave <- tuneR::sine
     # If just a single note...
     wave(freq[note], bit = 16, xunit = "time", duration = duration)
 }
