@@ -25,3 +25,4 @@ Collate:
     'playsong.R'
     'musicmakeR-package.R'
     'increase_nlisten.R'
+    'data.R'
