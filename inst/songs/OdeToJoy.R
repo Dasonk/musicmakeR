@@ -1,6 +1,6 @@
 
 # Song Definition
-base_duration <- 1/4
+baseduration <- 1/4
 intro <- c("C4", "C4/G4", "C4/E4", "C4/G4", "C4", "C4/G4", "C4/E4", "C4/G4",
            "C4", "C4/G4", "C4/F4", "C4/G4", "C4", "C4/G4", "C4/F4", "C4/G4",
            "C4", "C4/G4", "C4/E4", "C4/G4", "C4", "C4/G4", "C4/E4", "C4/G4",
@@ -23,8 +23,9 @@ m4    <- c("C4/E5", "G4/E5", "E4/E5", "G4/E5", "C4/F5", "G4/F5", "E4/G5", "G4/G5
            "G3/D5", "G4/D5", "D4/D5", "D4/C5", "4_C4/E4/G4/C5")
 
 odetojoy <- c(intro, m1, m2, m3, m4)
+attr(odetojoy, "baseduration") <- baseduration
 
 #save(odetojoy, file = "data/odetojoy.rda")
 
-song <- makesong(odetojoy)
+song <- makesong(odetojoy, baseduration)
 playsong(song)
