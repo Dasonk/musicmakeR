@@ -21,8 +21,9 @@ v2     <- c("C4/E6", "G4/E6",  "C5/E6",  "G5",  "F6",  "E6",
             v1)
 v2e1    <- c("A3/A5", "E4/A5",  "A4",  "B5",  "C6",  "D6")
 v2e2    <- c("2_A3/A5")
-fur_elise_notes <- c(intro, v1, v1e1, v1, v1e2, v2, v2e1, v2, v2e2)
+furelise <- c(intro, v1, v1e1, v1, v1e2, v2, v2e1, v2, v2e2)
 
+save(furelise, file = "data/furelise.rda")
 
-song <- makesong(fur_elise_notes, base_duration)
+song <- makesong(furelise, base_duration)
 playsong(song)

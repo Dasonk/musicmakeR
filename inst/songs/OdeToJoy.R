@@ -22,7 +22,9 @@ m4    <- c("C4/E5", "G4/E5", "E4/E5", "G4/E5", "C4/F5", "G4/F5", "E4/G5", "G4/G5
            "A3/C5", "G4/C5", "E4/C5", "G4/C5", "A3/D5", "G4/D5", "E4/E5", "G4/E5",
            "G3/D5", "G4/D5", "D4/D5", "D4/C5", "4_C4/E4/G4/C5")
 
-odetojoy_notes <- c(intro, m1, m2, m3, m4)
+odetojoy <- c(intro, m1, m2, m3, m4)
 
-song <- makesong(odetojoy_notes)
+#save(odetojoy, file = "data/odetojoy.rda")
+
+song <- makesong(odetojoy)
 playsong(song)
