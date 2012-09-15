@@ -24,8 +24,9 @@ v2e2    <- c("2_A3/A5")
 
 furelise <- c(intro, v1, v1e1, v1, v1e2, v2, v2e1, v2, v2e2)
 attr(furelise, "baseduration") <- baseduration
+class(furelise) <- "song"
 
-#save(furelise, file = "data/furelise.rda")
+save(furelise, file = "data/furelise.rda")
 
-song <- makesong(furelise, baseduration)
-playsong(song)
+#song <- makesong(furelise, baseduration)
+#playsong(song)

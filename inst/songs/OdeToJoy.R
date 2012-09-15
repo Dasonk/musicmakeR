@@ -24,8 +24,9 @@ m4    <- c("C4/E5", "G4/E5", "E4/E5", "G4/E5", "C4/F5", "G4/F5", "E4/G5", "G4/G5
 
 odetojoy <- c(intro, m1, m2, m3, m4)
 attr(odetojoy, "baseduration") <- baseduration
+class(odetojoy) <- "song"
 
-#save(odetojoy, file = "data/odetojoy.rda")
+save(odetojoy, file = "data/odetojoy.rda")
 
-song <- makesong(odetojoy, baseduration)
-playsong(song)
+#song <- makesong(odetojoy, baseduration)
+#playsong(song)
