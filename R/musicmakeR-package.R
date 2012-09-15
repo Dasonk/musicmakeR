@@ -7,5 +7,4 @@
 #' @docType package
 #' @name musicmakeR
 #' @aliases musicmakeR package-musicmakeR
-#' @import tuneR
 NULL
