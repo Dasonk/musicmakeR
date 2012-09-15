@@ -5,12 +5,12 @@
   playsong(song)
 }
 \arguments{
-  \item{song}{Either a character vector of class "song" or
-  a Wave object.}
+  \item{song}{Either a character vector of class
+  "songnotes" or a Wave object.}
 }
 \description{
   A system independent way of playing a song made with
-  make_song.  If a player for Wave files hasn't been set
+  makesong.  If a player for Wave files hasn't been set
   using setWavPlayer then the function tries to autodetect
   an appropriate player.
 }

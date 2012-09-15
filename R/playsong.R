@@ -1,6 +1,6 @@
 #' Plays a song
 #' 
-#' A system independent way of playing a song made with make_song.  If
+#' A system independent way of playing a song made with makesong.  If
 #' a player for Wave files hasn't been set using setWavPlayer then the function
 #' tries to autodetect an appropriate player.  
 #' 
@@ -8,7 +8,7 @@
 #' The autodetection currently relies on xdg-mime.  If this is not on the
 #' system and a valid Wave player isn't set then a warning will occur.
 #' 
-#' @param song Either a character vector of class "song" or a Wave object.
+#' @param song Either a character vector of class "songnotes" or a Wave object.
 #' 
 #' @export
 #' @examples
@@ -18,7 +18,7 @@
 #' }
 playsong <- function(song){
     
-    if(is(song, "song")){
+    if(is(song, "songnotes")){
         song <- makesong(song)
     }
     
