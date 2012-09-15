@@ -52,7 +52,14 @@ playsong <- function(song){
     
     # Damn! Still hasn't worked.  Let's get a little more creative.
     
-    j <- Sys.which("open")
+    # If on a mac (maybe)
+    if(Sys.info()["sysname"] == "Darwin"){
+        filename <- tempfile("tuneRtemp", fileext = ".wav")
+        on.exit(unlink(filename))
+        writeWave(song, filename)
+        system(paste("open -a iTunes", filename))
+        return(invisible())
+    }
     
     # taken from play.Wave
 #     filename <- "tuneRtemp.wav"
