@@ -5,8 +5,8 @@
   playsong(song)
 }
 \arguments{
-  \item{song}{The output from make_song.  Any Wave object
-  is valid input though.}
+  \item{song}{Either a character vector of class "song" or
+  a Wave object.}
 }
 \description{
   A system independent way of playing a song made with
@@ -21,7 +21,7 @@
 }
 \examples{
 \dontrun{
-song <- make_song(c("A5", "B5", "C5"))
+song <- makesong(c("A5", "B5", "C5"))
 playsong(song)
 }
 }

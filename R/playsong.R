@@ -8,18 +8,22 @@
 #' The autodetection currently relies on xdg-mime.  If this is not on the
 #' system and a valid Wave player isn't set then a warning will occur.
 #' 
-#' @param song The output from make_song.  Any Wave object is valid
-#' input though.
+#' @param song Either a character vector of class "song" or a Wave object.
 #' 
 #' @export
 #' @examples
 #' \dontrun{
-#' song <- make_song(c("A5", "B5", "C5"))
+#' song <- makesong(c("A5", "B5", "C5"))
 #' playsong(song)
 #' }
 playsong <- function(song){
     
-    # Attempt to play song.  
+    if(is(song, "song")){
+        song <- makesong(song)
+    }
+    
+    # Attempt to play song.
+    # If things don't work we'll ask for forgiveness later
     out <- play(song)
     
     # Success - exit the function
@@ -38,9 +42,31 @@ playsong <- function(song){
         prog <- gsub(".desktop", "", prog, fixed = TRUE)
         prog.path <- Sys.which(prog)
         setWavPlayer(prog.path)
+        
+        out <- play(song)
+        # Success - exit the function
+        if(out == 0){
+            return(invisible())
+        }
     }
     
-    out <- play(song)
+    # Damn! Still hasn't worked.  Let's get a little more creative.
+    
+    j <- Sys.which("open")
+    
+    # taken from play.Wave
+#     filename <- "tuneRtemp.wav"
+#     wd <- getwd()
+#     setwd(tempdir())
+#     on.exit({
+#         unlink(filename)
+#         setwd(wd)
+#     })
+#     writeWave(object, filename)
+#     play(file.path(tempdir(), filename), player, ...)
+    
+    
+
     if(out != 0){
         warning("Wave player is not currently set and autodetection failed\n",
                 "Please set the desired player for Wave fles using the setWavPlayer function")
