@@ -22,7 +22,11 @@
 \examples{
 \dontrun{
 song <- makesong(c("A5", "B5", "C5"))
+odetojoy.song <- makesong(odetojoy, baseduration = 1/4)
+furelise.song <- makesong(furelise, baseduration = 1/3)
 playsong(song)
+playsong(odetojoy)
+playsong(furelise)
 }
 }
 
