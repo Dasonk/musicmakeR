@@ -20,3 +20,26 @@ install_github("musicmakeR", "Dasonk")
 ```
 
 Note: Windows users need [Rtools](http://www.murdoch-sutherland.com/Rtools/) and [devtools](http://CRAN.R-project.org/package=devtools) to install this way.
+
+## Using musicmakeR
+
+Once you have `musicmakeR` installed if you want to test whether it works on your system you can try the following
+
+```r
+library(musicmakeR)
+
+# odetojoy is a built in vector containing the notes/chords
+# to play Beethoven's 'Ode to Joy'.  For more information see ?odetojoy
+odetojoy.song <- makesong(odetojoy, baseduration = 1/4)
+
+# Play the song
+playsong(odetojoy.song)
+```
+
+If that plays "Ode to Joy" for you then you're all set and you can try to make your own music if you would like
+
+```r
+mynotes <- c("A5", "B5", "C5")
+mysong <- makesong(mynotes)
+playsong(mysong)
+```

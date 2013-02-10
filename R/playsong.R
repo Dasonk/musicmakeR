@@ -17,8 +17,8 @@
 #' odetojoy.song <- makesong(odetojoy, baseduration = 1/4)
 #' furelise.song <- makesong(furelise, baseduration = 1/3)
 #' playsong(song)
-#' playsong(odetojoy)
-#' playsong(furelise)
+#' playsong(odetojoy.song)
+#' playsong(furelise.song)
 #' }
 playsong <- function(song){
     
@@ -38,10 +38,10 @@ playsong <- function(song){
     # If song couldn't play...
     
     # Check if the system has xdg-mime
-    j <- Sys.which("xdg-mime")
+    xdgmime <- Sys.which("xdg-mime")
     # If xdg-mime is available then autodetect the player for wav files
     # and set the player to that
-    if(j != ""){
+    if(xdgmime != ""){
         prog <- system("xdg-mime query default audio/x-wav", intern = TRUE)
         prog <- gsub(".desktop", "", prog, fixed = TRUE)
         prog.path <- Sys.which(prog)
