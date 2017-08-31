@@ -1,6 +1,8 @@
 musicmakeR
 ==========
 
+**Currently musicmakeR will install but is broken. I haven't had the time to look into fixing it and don't plan on doing that anytime in the near future 8/31/2017**
+
 The `musicmakeR` package  provides an easy way to create music from within R. 
 Currently only simple sine waves are used but chords can be created quite
 easily as well.
